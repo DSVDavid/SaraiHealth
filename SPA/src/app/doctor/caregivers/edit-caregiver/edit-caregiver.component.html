@@ -1,0 +1,64 @@
+<div id="main-dialog">
+    <h1 mat-dialog-title style="display: flex; align-items:center; justify-content:space-between">
+      Edit caregiver
+      <i class="material-icons" style="cursor: pointer" [mat-dialog-close]="false">
+        close
+      </i>
+    </h1>
+
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+                <input matInput placeholder="Email" [(ngModel)]="caregiver.email" email required  name="email" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Name" [(ngModel)]="caregiver.name" required name="name" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" [(ngModel)]="caregiver.password" required name="password" >
+            </mat-form-field>
+   
+        </div>
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+            <input matInput placeholder="Address" [(ngModel)]="caregiver.address" name="address" >
+            </mat-form-field> 
+
+            <mat-form-field>
+              <input matInput placeholder="Gender"  [(ngModel)]="caregiver.gender" required name="gender" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="date" matInput placeholder="Birth Date" (input)="caregiver.birthDate=parseDate($event.target.value)" [value]="caregiver.birthDate | date:'yyyy-MM-dd'" required name="birthDate" >
+            </mat-form-field>
+            
+        </div>
+        
+        <div class="form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Patients</mat-label>
+                <mat-select  [(ngModel)]="selected_patients" 
+                [ngModelOptions]="{standalone: true}" name="selected_patients"  multiple>
+                  <mat-option *ngFor="let patient of availablePatients" [value]="patient.id">{{patient.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        
+
+     
+
+        <div mat-dialog-actions id="user-form-control">
+            <button mat-raised-button type="submit" [disabled]="f.invalid"  color="primary">Edit </button>
+            <button mat-raised-button mat-button-base [mat-dialog-close]="false" color="accent">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

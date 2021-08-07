@@ -1,0 +1,12 @@
+html,body{
+    height:100%;
+}
+nav{
+    height:10vh;
+}
+main{
+    height:90vh;
+}
+#main-content{
+    height:100%;
+}

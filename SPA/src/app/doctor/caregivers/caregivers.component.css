@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+
+section{
+    background-color:#69f0ae;
+      height:100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+}
+
+mat-card{
+    width:70%;
+    align-items: center;
+}

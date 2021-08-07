@@ -1,0 +1,53 @@
+<div id="main-dialog">
+    <h1 mat-dialog-title style="display: flex; align-items:center; justify-content:space-between">
+      View patient
+      <i class="material-icons" style="cursor: pointer" [mat-dialog-close]="false">
+        close
+      </i>
+    </h1>
+
+    <form #f="ngForm" >
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+                <input matInput disabled placeholder="Email" [(ngModel)]="myPatient.email" email required  name="email" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput disabled placeholder="Name" [(ngModel)]="myPatient.name" required name="name" >
+            </mat-form-field>
+
+   
+        </div>
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+            <input matInput disabled placeholder="Address" [(ngModel)]="myPatient.address" name="address" >
+            </mat-form-field> 
+
+            <mat-form-field>
+              <input matInput disabled placeholder="Gender"  [(ngModel)]="myPatient.gender" required name="gender" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="date" matInput disabled (input)="myPatient.birthDate=parseDate($event.target.value)" [value]="myPatient.birthDate | date:'yyyy-MM-dd'" placeholder="Birth Date"  required name="birthDate" >
+            </mat-form-field>
+            
+        </div>
+
+        <div class="form-field-group">
+            
+            <mat-form-field id="med-record">
+                <textarea matInput disabled placeholder="Medical record"  [(ngModel)]="myPatient.medicalRecord" required name="medicalRecord" >
+                </textarea>
+            </mat-form-field>
+        
+        </div>
+
+        
+
+    </form>
+
+</div>

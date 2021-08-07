@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-start">
+        <mat-icon id="logo-icon">local_hospital</mat-icon>
+        <h4>Sarai Health</h4>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+           
+            <li *ngIf="userInfo&&userInfo.role=='doctor'">
+               <a  routerLink="/doctor">Patients</a> 
+            </li>
+            <li *ngIf="userInfo&&userInfo.role=='doctor'">
+                <a  routerLink="/doctor/caregivers">Caregivers</a> 
+            </li>
+            <li *ngIf="userInfo&&userInfo.role=='doctor'">
+                <a  routerLink="/doctor/medication">Medication</a>
+            </li>
+            <li *ngIf="userInfo&&userInfo.role=='patient'">
+                <a  routerLink="/patient">Account Details</a> 
+            </li>
+            <li *ngIf="userInfo&&userInfo.role=='patient'">
+                <a  routerLink="/patient/medication">Medication Details</a>
+            </li>
+
+            <li *ngIf="userInfo">
+                <a routerLink="#"  (click)="logOut()">Log out</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>

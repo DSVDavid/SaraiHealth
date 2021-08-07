@@ -1,0 +1,81 @@
+input{
+    font-size: 1.3em;
+}
+
+mat-form-field{
+    margin: 1em;
+}
+
+mat-select{
+ 
+    text-align: center;
+}
+
+#main-dialog{
+    padding:2em;
+}
+
+#side-effects-area{
+    width:85%;
+}
+
+.form-field-group{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#user-form-control{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#user-form-control > button {
+    margin-left:8px;
+}
+
+input{
+    font-size: 1.3em;
+}
+
+mat-form-field{
+    margin: 1em;
+}
+
+mat-select{
+ 
+    text-align: center;
+}
+
+#main-dialog{
+    padding:2em;
+}
+
+#side-effects-area{
+    width:85%;
+}
+
+.form-field-group{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#roles-table-controller{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+#user-form-control{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#user-form-control > button {
+    margin-left:8px;
+}

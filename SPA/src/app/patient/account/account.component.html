@@ -1,0 +1,56 @@
+<section>
+<mat-card>
+<div id="main-dialog">
+    <h1 mat-dialog-title style="display: flex; align-items:center; justify-content:space-between">
+      Patient : {{user.name}}
+      
+    </h1>
+
+    <form #f="ngForm" >
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+                <input matInput disabled placeholder="Email" [ngModel]="user.email" email required  name="email" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput disabled placeholder="Name" [ngModel]="user.name" required name="name" >
+            </mat-form-field>
+
+           
+   
+        </div>
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+            <input matInput placeholder="Address" disabled [ngModel]="user.address" name="address" >
+            </mat-form-field> 
+
+            <mat-form-field>
+              <input matInput placeholder="Gender" disabled  [ngModel]="user.gender" required name="gender" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="date" matInput placeholder="Birth Date" disabled  [value]="user.birthDate | date:'yyyy-MM-dd'" required name="birthDate" >
+            </mat-form-field>
+            
+        </div>
+
+        <div class="form-field-group">
+            
+            <mat-form-field id="med-record">
+                <textarea matInput placeholder="Medical record" disabled  [ngModel]="user.medicalRecord" required name="medicalRecord" >
+                </textarea>
+            </mat-form-field>
+        
+        </div>
+
+        
+
+    </form>
+
+</div>
+</mat-card>
+</section>

@@ -1,0 +1,59 @@
+<div id="main-dialog">
+    <h1 mat-dialog-title style="display: flex; align-items:center; justify-content:space-between">
+      Edit patient
+      <i class="material-icons" style="cursor: pointer" [mat-dialog-close]="false">
+        close
+      </i>
+    </h1>
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+                <input matInput placeholder="Email" [(ngModel)]="myPatient.email" email required  name="email" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Name" [(ngModel)]="myPatient.name" required name="name" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="password" [(ngModel)]="myPatient.password" placeholder="Password" ngModel required name="password" >
+            </mat-form-field>
+   
+        </div>
+
+        <div class="form-field-group">
+
+            <mat-form-field>
+            <input matInput placeholder="Address" [(ngModel)]="myPatient.address" name="address" >
+            </mat-form-field> 
+
+            <mat-form-field>
+              <input matInput placeholder="Gender"  [(ngModel)]="myPatient.gender" required name="gender" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="date" matInput (input)="myPatient.birthDate=parseDate($event.target.value)" [value]="myPatient.birthDate | date:'yyyy-MM-dd'" placeholder="Birth Date"  required name="birthDate" >
+            </mat-form-field>
+            
+        </div>
+
+        <div class="form-field-group">
+            
+            <mat-form-field id="med-record">
+                <textarea matInput placeholder="Medical record"  [(ngModel)]="myPatient.medicalRecord" required name="medicalRecord" >
+                </textarea>
+            </mat-form-field>
+        
+        </div>
+
+        <div mat-dialog-actions id="user-form-control">
+            <button mat-raised-button type="submit" [disabled]="f.invalid"  color="primary">Update </button>
+            <button mat-raised-button mat-button-base [mat-dialog-close]="false" color="accent">Cancel</button>
+        </div>
+
+    </form>
+
+</div>
