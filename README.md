@@ -3,7 +3,7 @@
 ## eHealth System Distributed Systems University Project
 
 
-Made using .NET Core, Angular, Docker, RabbitMq, SQLServer.
+Made using .NET Core, Angular, Docker, RabbitMq, PostgreSQL.
 
 The project uses different communication protocols: HTTP requests, WebSockets, AMQP.
 
